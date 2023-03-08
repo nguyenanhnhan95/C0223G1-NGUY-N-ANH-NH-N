@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th style="width: 80px">Amount</th>
+            <th style="width: 50px"></th>
+            <th>From Currency</th>
+            <th style="width: 40px"></th>
+            <th>To Currency</th>
+            <th style="width: 30px"></th>
+        </tr>
+        <tr>
+            <td>
+                <input id="amount" style="width: 90px" name="number" value="1">
+            </td>
+            <td></td>
+            <td>
+                <select id="from">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td></td>
+            <td>
+                <select id="to">
+                    <option value="VND">VNĐ</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="transferMoney()">Convert</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    function transferMoney() {
+        let resultTransfer;
+        let numberAmount = document.getElementById("amount").value;
+        let fromCurrent = document.getElementById("from").value;
+        let toCurrent = document.getElementById("to").value;
+
+        if (fromCurrent == "VND") {
+            if (toCurrent == "USD") {
+                resultTransfer = numberAmount / 23.45;
+            } else {
+                resultTransfer = numberAmount;
+            }
+
+        } else if (fromCurrent == "USD") {
+            if (toCurrent == "VND") {
+                resultTransfer = numberAmount * 23.45;
+            } else {
+                resultTransfer = numberAmount;
+            }
+
+        }
+        document.write("Số tiền bạn đổi được=" +resultTransfer+toCurrent);
+    }
+</script>
+</body>
+</html>

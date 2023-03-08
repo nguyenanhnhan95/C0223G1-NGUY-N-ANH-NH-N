@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <table>
+    <tr>
+      <th colspan="2" style="font-size: 30px;width: 70px">Calculor</th>
+    </tr>
+    <tr>
+      <td>
+        <input id="numberA" name="name1" style="width: 175px">
+      </td>
+      <td>
+        <input id="numberB" name="name2 " style="width: 190px">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <button  type="button" onclick="myCalculor('+')" value="Addition">Addition(+)</button>
+        <button  type="button"  onclick="myCalculor('-')" value="Subtraction">Subtraction(-)</button>
+      </td>
+      <td>
+        <button  type="button" onclick="myCalculor('x')" value="Multiplication">Multiplication</button>
+        <button  type="button"  onclick="myCalculor('/')" value="division" style="width: 100px">division</button>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+<script>
+  function myCalculor(operator){
+    let numberFirst=document.getElementById("numberA").value*1;
+    let numberTwo=document.getElementById("numberB").value*1;
+    //alert(operator)
+    let resultCalculator;
+    if (operator=='+'){
+      resultCalculator=numberFirst+numberTwo;
+
+    }
+    if (operator=='-'){
+      resultCalculator=numberFirst-numberTwo;
+
+    }
+    if (operator=='x'){
+      resultCalculator=numberFirst*numberTwo;
+
+    }
+    if (operator=='/'){
+      resultCalculator=numberFirst/numberTwo;
+
+
+    }
+    alert(resultCalculator)
+
+
+
+
+
+  }
+</script>
+</html>
