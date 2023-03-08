@@ -8,6 +8,7 @@
 
 </body>
 <script>
+    //Trung binh mon hoc
     let Math;
     let Chemistry;
     let Biology;
@@ -16,5 +17,17 @@
     Biology=prompt("Enter Biology")*1;
     let average=(Math+Chemistry+Biology)/3
     document.write("average="+average)
+    //Dien tich hinh tron
+    let inputRius=prompt("Enter rius :")*1;
+    let circleArea=Math.pow(inputRius,2)*Math.PI;
+    document.write(circleArea);
+    //Chu vi hinh tron
+    let inputRiusa=prompt("Enter Radius R=")*1;
+    let valuePerimeter=2*Math.PI*inputRiusa;
+    document.write("Perimeter= "+valuePerimeter);
+    //Bai chuyen doi nhiet do
+    let inputDegre=prompt("Enter celsius")*1;
+    let valueFahrenheit=(9*inputDegre)/5+32;
+    document.write(valueFahrenheit)
 </script>
 </html>
