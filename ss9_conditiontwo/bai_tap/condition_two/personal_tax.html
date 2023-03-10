@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  let inputIncome = +prompt("Enter your income =");
+  if (inputIncome > 80) {
+    alert("your income tax=" + ((inputIncome * 0.35) - 9.85));
+  } else if (inputIncome > 52) {
+    alert("your income tax=" + ((inputIncome * 0.3) - 5.85));
+  } else if (inputIncome > 32) {
+    alert("your income tax=" + ((inputIncome * 0.25) - 3.25));
+  } else if (inputIncome > 18) {
+    alert("your income tax=" + ((inputIncome * 0.2) - 1.65));
+  } else if (inputIncome > 10) {
+    alert("your income tax=" + ((inputIncome * 0.15) - 0.75));
+  } else if (inputIncome > 5) {
+    alert("your income tax=" + ((inputIncome * 0.1) - 0.25));
+  } else {
+    alert("your income tax=" + ((inputIncome * 0.5)));
+  }
+</script>
+</html>

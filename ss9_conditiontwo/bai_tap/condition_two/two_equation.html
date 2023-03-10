@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  let inputA = +prompt("Please Enter A khác 0");
+  let inputB = +prompt("Please Enter  B");
+  let inputC = +prompt("Please Enter  C");
+  let valueDelta = Math.pow(inputB, 2) - 4 * inputA * inputC;
+  if (valueDelta > 0) {
+    alert("one test =" + (((-inputB) - Math.pow(valueDelta, 0.5)) / (2 * inputA)));
+    alert("two test =" + ((inputB - Math.pow(valueDelta, 0.5)) / (2 * inputA)));
+  } else if (valueDelta == 0) {
+    alert("one test =" + ((-inputB) / (2 * inputA)));
+  } else {
+    alert("without test")
+  }
+</script>
+</html>

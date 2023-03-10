@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="ball" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg"
+         style="width: 30%;position: relative;left: 15px;top:0px"/>
+    <p>Click button below to move the image to right</p>
+    <input type="button" value="Turn Right" onclick="moverBall('turnright')"/>
+    <input type="button" value="Turn Left" onclick="moverBall('turnleft')"/>
+    <input type="button" value="Turn Top" onclick="moverBall('moveup')"/>
+    <input type="button" value="Turn down" onclick="moverBall('movedown')"/>
+</form>
+</body>
+<script>
+    let imObj = null;
+    imObj = document.getElementById("ball");
+
+    function moverBall(obj) {
+        switch (obj) {
+            case 'turnright':
+                imObj.style.left = parseInt(imObj.style.left) - 5 + "px";
+                break;
+            case 'turnleft':
+                imObj.style.left = parseInt(imObj.style.left) + 5 + "px";
+                break;
+            case 'moveup':
+                imObj.style.top = parseInt(imObj.style.top) + 5 + "px";
+                break;
+            case 'movedown':
+                imObj.style.top = parseInt(imObj.style.top) - 5 + "px";
+                break;
+        }
+
+    }
+</script>
+</html>

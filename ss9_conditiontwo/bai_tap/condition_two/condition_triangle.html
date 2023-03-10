@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  inputA = +prompt("Enter A Edge =");
+  inputB = +prompt("Enter B Edge =");
+  inputC = +prompt("Enter C Edge =");
+  if ((inputA > 0 && inputB > 0) && inputC > 0) {
+    if (((inputA + inputB) > inputC) && ((inputB + inputC) > inputA) && ((inputA + inputC) > inputB)) {
+      alert("triangle qualify")
+    } else {
+      alert("isn't triangle qualify")
+    }
+  } else {
+    alert("isn't triangle qualify")
+
+  }
+</script>
+</html>

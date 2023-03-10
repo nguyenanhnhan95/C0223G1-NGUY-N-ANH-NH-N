@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="border: solid;width: 140px;padding: 10px">
+    <table style="color: blue">
+        <tr>
+            <th colspan="4" style="width:30px">
+                <input id="nhan" type="text" style="text-align: right;width: 120px">
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="myCaculator('1')">1</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('2')">2</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('3')">3</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="myCaculator('4')">4</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('5')">5</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('6')">6</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="myCaculator('7')">7</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('8')">8</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('9')">9</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('*')">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="showClear()">A</button>
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('0')">0</button>
+            </td>
+            <td>
+                <input type="button" onclick="expressEqual()" value="=">
+            </td>
+            <td>
+                <button type="button" onclick="myCaculator('/')">/</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+<script>
+    function myCaculator(obj) {
+        document.getElementById("nhan").value += obj;
+    }
+
+    function expressEqual() {
+        let string = document.getElementById("nhan").value;
+        document.getElementById("nhan").value = (eval(string));
+    }
+
+    function showClear() {
+        document.getElementById("nhan").value = "";
+    }
+
+</script>
+</html>

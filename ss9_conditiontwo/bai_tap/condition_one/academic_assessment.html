@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let midtermScore = +prompt("Enter your midterm score ")
+    let endScore = +prompt("Enter your end ")
+    let resultQualify = (midtermScore + endScore * 2) / 3;
+    alert(resultQualify)
+    if (resultQualify >= 80) {
+        alert("Học sinh giỏi")
+    } else if (resultQualify >= 70) {
+        alert("Học sinh khá ")
+    } else if (resultQualify >= 50) {
+        alert("Học sinh trung bình ")
+    } else {
+        alert("Học lục yếu ")
+    }
+</script>
+</html>
