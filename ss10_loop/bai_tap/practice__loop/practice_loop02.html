@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inputTemaprature;
+    do {
+        inputTemaprature = +prompt("Please enter temperature =")
+        if (inputTemaprature > 100) {
+            alert("Please required to reduce the temperature ");
+        }
+        if (inputTemaprature < 20) {
+            alert("Please required to increase the temperature ");
+        }
+    } while (inputTemaprature > 100 || inputTemaprature < 20);
+    alert("Tenaptature =" + inputTemaprature)
+</script>
+</html>

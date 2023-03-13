@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Do you love me?</h1>
+<button id="yes" onclick="rightChoice()" >Yes</button>
+<button id="No" onmouseover="wrongChoice()" style="position:relative;left:15px;top: 0px">No</button>
+</body>
+<script>
+  function rightChoice(){
+    alert("Your choice is right ")
+  }
+  function wrongChoice(){
+    let windowHeiht=window.innerHeigh;
+    let windowWidth=window.innerWidth;
+    let noHeight=document.getElementById("No");
+    noHeight.style.left = parseInt(imObj.style.left) + 5 + "px";
+  }
+</script>
+</html>

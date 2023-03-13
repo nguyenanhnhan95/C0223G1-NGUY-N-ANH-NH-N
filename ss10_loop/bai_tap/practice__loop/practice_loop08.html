@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="guessNumber()">Bắt đầu</button>
+</body>
+<script>
+    let numberA;
+    let numberB = 0;
+    let numberC = 0;
+    let n = 0
+
+    function guessNumber() {
+        numberA = +prompt("Please enter number range=");
+        numberB = Math.floor(Math.random() * numberA);
+        do {
+            numberC = +prompt("Please enter guess  number");
+            if (numberC > numberB) {
+                alert("Please you input number smaller than")
+            } else if (numberC < numberB) {
+                alert("Please you input number greater than")
+            } else {
+                alert("You input right ")
+                break;
+            }
+            n += 1;
+        } while (n < 3);
+
+    }
+</script>
+</html>

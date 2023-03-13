@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberCount = +prompt("how many prime you want to print =");
+    let numberPrime = "";
+    let countRound = 0;
+    let numberN = 0
+    let j = 2;
+    while (countRound < numberCount) {
+        for (i = 1; i <= j; i++) {
+            if ((j % i) == 0) {
+                numberN += 1;
+            }
+        }
+        if (numberN == 2) {
+            numberPrime += " " + j;
+            countRound += 1
+        }
+        j += 1;
+        numberN = 0;
+    }
+    document.write("these are  the prime numbers =" + numberPrime)
+</script>
+</html>

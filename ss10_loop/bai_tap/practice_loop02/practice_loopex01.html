@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberFibonacci = " ";
+    for (let i = 1, j = 1; j < 100; j++) {
+        let c = j;
+        j += i;
+        i = c;
+        numberFibonacci += " " + j + " ";
+    }
+    document.write(numberFibonacci)
+</script>
+</html>
