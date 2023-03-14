@@ -9,11 +9,10 @@
 </body>
 <script>
     let mulTable;
-    let i, j;
-    mulTable = "<table border='1' width='500' cellspacing='1' cellpadding='8'>"
-    for (j = 2; j <= 10; j++) {
+    mulTable = "<table border='1' width='500' cellspacing='1' cellpadding='8'>";
+    for (let j = 2; j <= 10; j++) {
         mulTable += "<tr>";
-        for (i = 1; i < 10; i++) {
+        for (let i = 1; i < 10; i++) {
             mulTable += "<td>" + j + "x" + i + "=" + i * j + "</td>";
         }
         mulTable += "</tr>";

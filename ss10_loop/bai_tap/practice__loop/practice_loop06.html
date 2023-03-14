@@ -9,15 +9,15 @@
 </body>
 <script>
     let numberSeven = 0;
-    let n = 0;
-    let i = 8
-    while (n < 30) {
-        if (i % 7 === 0) {
-            numberSeven += i;
-            n += 1;
+    let numberCount = 0;
+    let numberA = 8;
+    while (numberCount < 30) {
+        if (numberA % 7 === 0) {
+            numberSeven += numberA;
+            numberCount += 1;
         }
 
-        i += 1;
+        numberA += 1;
     }
     document.write("Sum thirty numbers divisible by seven=" + numberSeven);
 </script>

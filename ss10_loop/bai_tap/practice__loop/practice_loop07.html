@@ -9,21 +9,21 @@
 </body>
 <script>
     let numberA = "";
-    for (i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 100; i++) {
         if (i % 3 === 0) {
             if (i % 5 === 0) {
                 numberA += +i + "=FizzBuzz <br>";
                 continue;
             } else {
-                numberA += +i + "=Fizz <br>"
+                numberA += +i + "=Fizz <br>";
                 continue;
             }
         } else if (i % 5 === 0) {
-            numberA += +i + "=Buzz <br>"
+            numberA += +i + "=Buzz <br>";
             continue;
         }
         numberA += i + " <br>";
     }
-    document.write(numberA)
+    document.write(numberA);
 </script>
 </html>

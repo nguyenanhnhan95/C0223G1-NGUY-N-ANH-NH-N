@@ -11,21 +11,21 @@
     let numberCount = +prompt("how many prime you want to print =");
     let numberPrime = "";
     let countRound = 0;
-    let numberN = 0
-    let j = 2;
+    let numberN = 0;
+    let numberloop = 2;
     while (countRound < numberCount) {
-        for (i = 1; i <= j; i++) {
-            if ((j % i) == 0) {
+        for (let i = 1; i <= numberloop; i++) {
+            if ((numberloop % i) == 0) {
                 numberN += 1;
             }
         }
         if (numberN == 2) {
-            numberPrime += " " + j;
-            countRound += 1
+            numberPrime += " " + numberloop;
+            countRound += 1;
         }
-        j += 1;
+        numberloop += 1;
         numberN = 0;
     }
-    document.write("these are  the prime numbers =" + numberPrime)
+    document.write("these are  the prime numbers =" + numberPrime);
 </script>
 </html>

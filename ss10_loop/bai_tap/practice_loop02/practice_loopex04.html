@@ -8,22 +8,22 @@
 
 </body>
 <script>
-  let n=0;
-  for(let i=0;i<22;i++){
-    document.write("*")
-  }
-  document.write("<br>")
-  while ( n<5){
-    document.write("*");
-    for(let j=0;j<20;j++){
-      document.write("&nbsp&nbsp");
+    let numberCount = 0;
+    for (let i = 0; i < 22; i++) {
+        document.write("*");
     }
-      document.write("*"+"<br>");
-    n+=1;
-  }
-  for(let i=0;i<22;i++){
-    document.write("*")
-  }
-  document.write("<br>")
+    document.write("<br>")
+    while (numberCount < 5) {
+        document.write("*");
+        for (let j = 0; j < 20; j++) {
+            document.write("&nbsp&nbsp");
+        }
+        document.write("*" + "<br>");
+        numberCount += 1;
+    }
+    for (let i = 0; i < 22; i++) {
+        document.write("*");
+    }
+    document.write("<br>");
 </script>
 </html>

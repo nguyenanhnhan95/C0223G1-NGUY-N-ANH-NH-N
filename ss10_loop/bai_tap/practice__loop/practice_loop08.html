@@ -11,7 +11,7 @@
     let numberA;
     let numberB = 0;
     let numberC = 0;
-    let n = 0
+    let numberCount = 0
 
     function guessNumber() {
         numberA = +prompt("Please enter number range=");
@@ -23,12 +23,11 @@
             } else if (numberC < numberB) {
                 alert("Please you input number greater than")
             } else {
-                alert("You input right ")
+                alert("You input right ");
                 break;
             }
-            n += 1;
-        } while (n < 3);
-
+            numberCount += 1;
+        } while (numberCount < 3);
     }
 </script>
 </html>

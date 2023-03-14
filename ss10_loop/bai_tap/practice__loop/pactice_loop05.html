@@ -8,16 +8,16 @@
 
 </body>
 <script>
-    let i = 1;
-    let j = 1;
-    let n = 0;
+    let numberA = 1;
+    let numberB = 1;
+    let numberCount = 0;
     let numberFibonaccci = "  ";
-    while (n < 20) {
-        let c = j;
-        j += i;
-        i = c;
-        numberFibonaccci += j;
-        n += 1;
+    while (numberCount < 20) {
+        let numberC = numberB;
+        numberB += numberA;
+        numberA = numberC;
+        numberFibonaccci += numberB;
+        numberCount += 1;
 
     }
     alert("sum of the first twenty numbers=" + numberFibonaccci)
