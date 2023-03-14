@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayEight = [];
+    for (let i = 0; i < 10; i++) {
+        arrayEight[i] = +prompt("Please enter A[" + i + "]= ");
+    }
+    for (let i = 0; i < arrayEight.length - 1; i++) {
+        let numberMax = 0;
+        let numberC = 0;
+        for (let j = i; j < arrayEight.length; j++) {
+            if (numberMax < arrayEight[j]) {
+                numberMax = arrayEight[j];
+                numberC = j;
+            }
+        }
+        arrayEight[numberC] = arrayEight[i];
+        arrayEight[i] = numberMax;
+    }
+    document.write("sort array=" + arrayEight);
+</script>
+</body>
+</html>

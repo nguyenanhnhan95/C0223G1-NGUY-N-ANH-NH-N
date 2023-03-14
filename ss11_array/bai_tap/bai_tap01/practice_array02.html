@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayB = [];
+    let i, j;
+    let numberMax = 0;
+    for (i = 0; i < 10; i++) {
+        arrayB[i] = +prompt("Please enter A[" + i + "]=")
+        for (j = 0; j < i; j++) {
+            if (arrayB[j] == arrayB[i]) {
+                alert("Please enter number different");
+                i -= 1;
+            }
+            if (numberMax < arrayB[i]) {
+                numberMax = arrayB[i];
+            }
+        }
+    }
+    alert("array's value maxnumberMax="+numberMax);
+</script>
+</body>
+</html>

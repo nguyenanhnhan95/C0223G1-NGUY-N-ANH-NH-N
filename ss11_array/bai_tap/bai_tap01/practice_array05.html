@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let numberSplit = prompt("Please enter split of the number =");
+    let numberNegative = "";
+    let numberCount = 0;
+    let arrayNegative = numberSplit.split('');
+    for (let i = 0; i < arrayNegative.length; i++) {
+        if (arrayNegative[i] == "-") {
+            numberNegative += arrayNegative[i];
+            numberCount += 1;
+        }
+    }
+    document.write("number smaller than zero =" + numberCount);
+</script>
+</html>

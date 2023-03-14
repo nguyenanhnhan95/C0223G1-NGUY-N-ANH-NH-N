@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Sample Screen</h1>
+<input type="text" id="nhan">
+<button onclick="addArray()">Add</button>
+<button onclick="displayArray()">Display</button>
+<p id="vu"></p>
+</body>
+<script>
+    let arrayA = Array();
+    let i = 0;
+
+    function addArray() {
+        arrayA[i] = document.getElementById("nhan").value;
+        i += 1;
+        document.getElementById("nhan").value = "";
+    }
+
+    function displayArray() {
+        let arrayValue = "";
+        for (let i = 0; i < arrayA.length; i++) {
+            arrayValue += "A[" + i + "]=" + arrayA[i];
+        }
+        document.getElementById("vu").innerHTML = arrayValue;
+        document.getElementById("nhan").value = "";
+    }
+</script>
+</html>

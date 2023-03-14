@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayB = [];
+    let arrayAverae = 0;
+    let numberMax = 0;
+    let i;
+    for (i = 0; i < 10; i++) {
+        arrayB[i] = +prompt("Please enter B[" + i + "]=");
+        arrayAverae += arrayB[i];
+        if (numberMax < arrayB[i]) {
+            numberMax = arrayB[i];
+        }
+    }
+    arrayAverae /= 10;
+    document.write("Array's max element value =" + numberMax + "<br>Average of array elements =" + arrayAverae)
+</script>
+</html>

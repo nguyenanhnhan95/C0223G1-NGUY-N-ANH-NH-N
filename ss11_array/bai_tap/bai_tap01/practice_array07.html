@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arraySeven = [];
+    let numberV = +prompt("Please enter number V= ");
+    for (let i = 0; i < 10; i++) {
+        arraySeven[i] = +prompt("Please enter A[" + i + "]= ");
+    }
+    document.write("array you enter= " + arraySeven + "<br>");
+    for (let i = 0; i < arraySeven.length; i++) {
+        if (arraySeven[i] == numberV) {
+            for (let j = i; j < arraySeven.length - 1; j++) {
+                arraySeven[j] = arraySeven[j + 1];
+            }
+            arraySeven[arraySeven.length - 1] = 0;
+        }
+    }
+    document.write("result =" + arraySeven);
+</script>
+</html>
