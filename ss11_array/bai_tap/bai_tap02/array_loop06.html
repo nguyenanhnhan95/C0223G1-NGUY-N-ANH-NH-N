@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arraySix = [];
+    let numberCharacter = +prompt("Please enter number of the element in the array=");
+    for (let i = 0; i < numberCharacter; i++) {
+        arraySix[i] = prompt("Please enter Array[" + i + "]=");
+        if (arraySix[i] == "-") {
+            arraySix[i] = "_";
+        }
+    }
+    alert(arraySix);
+</script>
+</html>

@@ -7,21 +7,21 @@
 <body>
 </body>
 <script>
-  let arrayA = [];
-  let arrayB = [];
-  let arrayC = [];
-  for (let i = 0; i < 5; i++) {
-    arrayA[i] = +prompt("Please enter A[" + i + "]= ");
-  }
-  for (let j = 0; j < 5; j++) {
-    arrayB[j] = +prompt("Please enter B[" + j + "]= ");
-  }
-  for (let i = 0; i < (arrayA.length + arrayB.length); i++) {
-    arrayC[i] = arrayA[i];
-    if (i >= arrayA.length) {
-      arrayC[i] = arrayB[i - arrayB.length];
+    let arrayA = [];
+    let arrayB = [];
+    let arrayC = [];
+    for (let i = 0; i < 5; i++) {
+        arrayA[i] = +prompt("Please enter A[" + i + "]= ");
     }
-  }
-  document.write("Result array C=" + arrayC);
+    for (let j = 0; j < 5; j++) {
+        arrayB[j] = +prompt("Please enter B[" + j + "]= ");
+    }
+    for (let i = 0; i < (arrayA.length + arrayB.length); i++) {
+        arrayC[i] = arrayA[i];
+        if (i >= arrayA.length) {
+            arrayC[i] = arrayB[i - arrayB.length];
+        }
+    }
+    document.write("Result array C=" + arrayC);
 </script>
 </html>

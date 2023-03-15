@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhan">
+<button onclick="myDictionary()">PressTranslate</button>
+
+</body>
+<script>
+    function myDictionary() {
+        let dataEnglish = ["apple", "banana", "strawberry"];
+        let dataVietnamese = ["Táo", "Chuối", "Dâu"];
+        for (let i = 0; i < dataEnglish.length; i++) {
+            if (document.getElementById("nhan").value == dataEnglish[i]) {
+                document.write(dataVietnamese[i]);
+            }
+        }
+    }
+</script>
+</html>

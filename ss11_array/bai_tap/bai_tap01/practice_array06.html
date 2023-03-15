@@ -8,17 +8,21 @@
 
 </body>
 <script>
-  let arrayV=[];
-  let numberV=+prompt("Enter number V to check array V= ");
-  for(let i=0;i<10;i++){
-    arrayV[i]=+prompt("Please enter element V["+i+"]=");
-  }
-  for(let i=0;i<10;i++){
-    if(numberV==arrayV[i]){
-      alert("V is in the array position "+i);
-    }else if (i==9){
-        alert("V is not in the array");
+    let arrayV = [];
+    let countN = 0;
+    let numberV = +prompt("Enter number V to check array V= ");
+    for (let i = 0; i < 10; i++) {
+        arrayV[i] = +prompt("Please enter element V[" + i + "]=");
     }
-  }
+    for (let i = 0; i < 10; i++) {
+        if (numberV == arrayV[i]) {
+            alert("V is in the array position " + i);
+        } else {
+            countN += 1;
+        }
+        if (countN = 9) {
+            alert("V isn't in the array position ");
+        }
+    }
 </script>
 </html>

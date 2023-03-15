@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="nhan" type="text">
+<button onclick="pressFind()">Press</button>
+</body>
+<script>
+  function pressFind() {
+    let listX = "jndhksdknfkdl";
+    let arrayA = listX.split('');
+    for (let i = 0; i < arrayA.length; i++) {
+      if (document.getElementById("nhan").value == arrayA[i]) {
+        alert("posittion word" + i);
+      }
+    }
+  }
+</script>
+</html>

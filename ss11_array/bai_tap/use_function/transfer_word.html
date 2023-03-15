@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  let inputList = prompt("Please enter list=");
+  const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const LOWER = "abcdefghijklmnopqrstuvwxyz"
+  const resultList = [];
+  for (let i = 0; i < inputList.length; i++) {
+      if (UPPER.includes(inputList[i])) {
+          resultList.push(inputList[i].toLowerCase());
+      } else if (LOWER.includes(inputList[i])) {
+          resultList.push(inputList[i].toUpperCase());
+      } else {
+          resultList.push(inputList[i]);
+      }
+  }
+  document.write(resultList.join(''));
+
+</script>
+</html>

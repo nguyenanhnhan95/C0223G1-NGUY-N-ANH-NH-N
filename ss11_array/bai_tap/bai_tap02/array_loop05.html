@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let oneList = prompt("Please enter list first ");
+    let twoList = prompt("Please enter list second ");
+    let arrayA = oneList.split('');
+    let arrayB = twoList.split('');
+    if (arrayA.length == arrayB.length) {
+        for (let i = 0; i < arrayA.length; i++) {
+            if (arrayA[i] != arrayB[i]) {
+                alert("list first diferent different list second ");
+                break;
+            }
+            if (i == (arrayB.length - 1)) {
+                alert("list first equal list second ");
+            }
+        }
+    } else {
+        alert("list first equal list second ");
+    }
+</script>
+</html>
