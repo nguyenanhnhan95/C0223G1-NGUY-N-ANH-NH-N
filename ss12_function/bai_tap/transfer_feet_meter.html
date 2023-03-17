@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputFeet = +prompt("Enter foot=");
+    let inputMeters = +prompt("Enter mete= ");
+    function transferMetter(objTwo) {
+        let meterValue = 0.305 * objTwo;
+        return meterValue;
+    }
+    function transferFoot(obj) {
+        let footValue = 3.279 * obj;
+        return footValue;
+    }
+    document.write(+inputFeet + "Foot=" + transferMetter(inputFeet) + "Metter<br>");
+    document.write(+inputMeters + "Metter=" + transferFoot(inputMeters) + "Foot<br>");
+</script>
+</html>

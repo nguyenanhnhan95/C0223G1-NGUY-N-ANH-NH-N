@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function swapNumber(obj1, obj2) {
+        let arrayA = [obj1, obj2];
+        let numberC = arrayA[0];
+        arrayA[0] = arrayA[1];
+        arrayA[1] = numberC;
+        return arrayA;
+    }
+    document.write(swapNumber(4, 5));
+</script>
+</html>

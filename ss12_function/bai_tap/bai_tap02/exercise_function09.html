@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayKey=[4,3,"u",5,"t",23,4];
+    let numberCheck=prompt("Enter key to find ");
+    function countKey(obj,obj2){
+        countN=0
+        let flag=true;
+        for(let i=0;i<obj.length;i++){
+            if(obj[i]==obj2){
+                countN+=1;
+                flag=false;
+            }
+        }
+        if(flag){
+            return -1;
+        }
+        else{
+            return countN;
+        }
+    }
+    alert(countKey(arrayKey,numberCheck));
+</script>
+</html>

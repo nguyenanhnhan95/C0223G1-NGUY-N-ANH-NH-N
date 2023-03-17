@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function createArray() {
+        let numberN = +prompt("Please enter number of element in array");
+        array = [];
+        for (let i = 0; i < numberN; i++) {
+            array[i] = +prompt("Enter position" + i + "=");
+        }
+        return array;
+    }
+
+    function reverse(obj) {
+        let arrayReverse = [];
+        for (let i = 0; i < obj.length; i++) {
+            arrayReverse[obj.length - i - 1] = obj[i];
+        }
+        return arrayReverse;
+    }
+
+    alert(reverse(createArray()));
+</script>
+</html>

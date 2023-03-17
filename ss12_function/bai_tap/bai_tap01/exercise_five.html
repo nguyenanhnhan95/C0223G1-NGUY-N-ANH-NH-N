@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let oneStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Dubhe", "Regulus"];
+    let twoStar = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Regulus"];
+
+    function showStar(obj1, obj2) {
+        let flag = true;
+        let inputKeyboard = prompt("Please star");
+        for (let i = 0; i < obj1.length; i++) {
+            if (obj1[i] == inputKeyboard) {
+                alert(obj2[i]);
+                flag = false;
+            }
+        }
+        if (flag) {
+            alert("not in array ");
+        }
+    }
+
+    showStar(oneStar, twoStar);
+</script>
+</html>

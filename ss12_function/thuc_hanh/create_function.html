@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function processConfirm(answer){
+    let returnResult = " ";
+    if(answer){
+      returnResult="Excellent. We'll play a nice game of chess.";
+    }
+    else{
+      returnResult="Maybe later then.";
+    }
+    return returnResult;
+  }
+  let comfirmAnswer= confirm("Shall we play a game?");
+  let theAnswer=processConfirm(comfirmAnswer);
+  alert(theAnswer);
+</script>
+</html>

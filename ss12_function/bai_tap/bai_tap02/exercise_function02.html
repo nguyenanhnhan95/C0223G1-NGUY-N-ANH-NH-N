@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputRadius = +prompt("Please enter radius=");
+
+    function caculatePerimeter(obj) {
+        return 2 * Math.PI * obj;
+    }
+
+    function caculateArea(obj1) {
+        return Math.PI * Math.pow(obj1, 2);
+    }
+
+    alert("Perimeter equal=" + caculatePerimeter(inputRadius));
+    alert("Area equal=" + caculateArea(inputRadius));
+</script>
+</html>

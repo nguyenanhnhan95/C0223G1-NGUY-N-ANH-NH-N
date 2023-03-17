@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let resultHtml="";
+  function creat(){
+    resultHtml+="<table border='1' >";
+    for(let i=0;i<10;i++){
+      resultHtml+="<tr>"
+      for(let j=0;j<10;j++){
+        resultHtml+="<td  onclick='playCaro("+i+","+j+")' width='80px' height='5px'>x</td>"
+      }
+      resultHtml+="<tr>"
+    }
+    return resultHtml+="</table>";
+  }
+  document.write(creat())
+  function playCaro(i,j){
+      alert(i+":"+j)
+  }
+</script>
+</html>

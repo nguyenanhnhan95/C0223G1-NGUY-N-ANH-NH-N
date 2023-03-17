@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function createArray() {
+        let arrayX = [];
+        let numberN = +prompt("Please enter number of element in the array=");
+        for (let i = 0; i < numberN; i++) {
+            arrayX[i] = +prompt("Please enter index" + i + "=");
+        }
+        document.write(arrayX + "<br>");
+        return arrayX;
+    }
+
+    document.write("value smaller in array you just input=" + findValue(createArray()));
+
+    function findValue(smallMost) {
+        let smallEst = smallMost[0];
+        for (let i = 1; i < smallMost.length; i++) {
+            if (smallEst >= smallMost[i]) {
+                smallEst = smallMost[i];
+            }
+        }
+        return smallEst;
+    }
+</script>
+</html>

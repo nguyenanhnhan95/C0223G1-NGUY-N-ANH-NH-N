@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Temperature Converter</h1>
+<p>Type a value in the Fahrenheit field to convert the value</p><br>
+<label for="nhan">Fahrenheit</label>
+<input id="nhan" type="text" style="text-align:left" oninput="transferTemperature()">
+<p>Celsisus : <span id="vu"></span></p>
+</body>
+<script>
+    function transferTemperature(temperature) {
+        let fahrenheitValue = document.getElementById("nhan").value * 1;
+        if (fahrenheitValue != 0) {
+            let temperatureValue = (fahrenheitValue - 32) / 1.8;
+            document.getElementById("vu").innerHTML = temperatureValue;
+        } else {
+            document.getElementById("vu").innerHTML = "";
+        }
+    }
+
+</script>
+</html>
