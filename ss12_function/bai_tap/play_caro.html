@@ -5,24 +5,44 @@
     <title>Title</title>
 </head>
 <body>
-
+<div id="nhan"></div>
 </body>
 <script>
-    let resultHtml="";
-  function creat(){
+    let arrayA=[];
+    for(let i=0;i<10;i++){
+        arrayA[i]=[];
+        for(let j=0;j<10;j++){
+            arrayA[i][j]="";
+        }
+    }
+    display(arrayA);
+  function display(arrayA){
+      let resultHtml="";
     resultHtml+="<table border='1' >";
     for(let i=0;i<10;i++){
       resultHtml+="<tr>"
       for(let j=0;j<10;j++){
-        resultHtml+="<td  onclick='playCaro("+i+","+j+")' width='80px' height='5px'>x</td>"
+        resultHtml+="<td  onclick='playCaro("+i+","+j+")' width='20px' height='20px' style='text-align: center'>"+arrayA[i][j]+"</td>"
       }
       resultHtml+="<tr>"
     }
-    return resultHtml+="</table>";
+    resultHtml+="</table>";
+    document.getElementById("nhan").innerHTML=resultHtml;
   }
-  document.write(creat())
-  function playCaro(i,j){
-      alert(i+":"+j)
+    let flag=true;
+  function playCaro(obj1,obj2){
+      while (arrayA[obj1][obj2]=="") {
+          if (flag) {
+              arrayA[obj1][obj2] = "x";
+              flag = false;
+          } else {
+              arrayA[obj1][obj2] = "0";
+              flag = true;
+          }
+      }
+      display(arrayA)
   }
+
+  checkPlay(arrayA);
 </script>
 </html>
