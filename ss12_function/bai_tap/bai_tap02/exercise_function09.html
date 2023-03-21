@@ -8,24 +8,25 @@
 
 </body>
 <script>
-    let arrayKey=[4,3,"u",5,"t",23,4];
-    let numberCheck=prompt("Enter key to find ");
-    function countKey(obj,obj2){
-        countN=0
-        let flag=true;
-        for(let i=0;i<obj.length;i++){
-            if(obj[i]==obj2){
-                countN+=1;
-                flag=false;
+    let arrayKey = [4, 3, "u", 5, "t", 23, 4];
+    let numberCheck = prompt("Enter key to find ");
+
+    function countKey(arr, numberType) {
+        countN = 0
+        let flag = true;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == numberType) {
+                countN += 1;
+                flag = false;
             }
         }
-        if(flag){
+        if (flag) {
             return -1;
-        }
-        else{
+        } else {
             return countN;
         }
     }
-    alert(countKey(arrayKey,numberCheck));
+
+    alert(countKey(arrayKey, numberCheck));
 </script>
 </html>
