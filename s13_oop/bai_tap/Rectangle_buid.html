@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="nhan" ></canvas>
+</body>
+<script>
+class Rectangle{
+    constructor(width,length) {
+        this.width=width;
+        this.length=length;
+    }
+    getWidth(){
+        return this.width;
+    }
+    getLength(){
+        return this.length;
+    }
+    area(){
+        return this.length*this.width;
+    }
+    perimeter(){
+        return 2*(this.length+this.width);
+    }
+}
+let rectangleA=new Rectangle(100,50);
+let draw=document.getElementById("nhan").getContext("2d");
+draw.beginPath();
+draw.rect(50,50,rectangleA.getWidth(),rectangleA.getLength());
+draw.stroke();
+
+</script>
+</html>

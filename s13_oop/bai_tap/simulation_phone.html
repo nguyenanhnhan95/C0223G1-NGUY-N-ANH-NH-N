@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class SmartPhone {
+        constructor(pin, message, status) {
+            this.pin = pin;
+            this.message = message;
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getMessage() {
+            return this.message;
+        }
+
+        setMessage(message) {
+            this.message = message;
+        }
+
+        writeMessage(massagenew) {
+            this.message += massagenew;
+        }
+
+        sendMessage(message, SmartPhone) {
+            SmartPhone.setMessage(message);
+        }
+    }
+
+    let smartA = new SmartPhone(25, "", "ON");
+    let smartB = new SmartPhone(35, "", "ON");
+    if (smartB.getStatus() == "ON") {
+        let writeMess = prompt("Please enter mess=");
+        smartA.setMessage(writeMess);
+        smartA.sendMessage(smartA.getMessage(), smartB);
+        alert(smartB.getMessage());
+    }
+</script>
+</html>

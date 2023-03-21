@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class TransferTemperature
+    {
+        constructor(temp)
+        {
+            this.temp = temp;
+        }
+        getTemp(){
+            return this.temp;
+        }
+        transferF()
+        {
+            let valueF;
+            valueF = (this.temp * 9) / 5 + 32;
+            return valueF;
+        }
+        transferK()
+        {
+            return this.temp+273.15;
+        }
+    }
+    let valueOne=new TransferTemperature(50);
+    document.write(+valueOne.getTemp()+"C="+valueOne.transferF()+"F<br>");
+    document.write(+valueOne.getTemp()+"C="+valueOne.transferK()+"K");
+</script>
+</html>

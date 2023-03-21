@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  class Battery {
+    constructor(energy) {
+      this.energy = energy;
+    }
+
+    setEnery(int) {
+      this.energy = int;
+    }
+
+    getEnergy() {
+      return this.energy;
+    }
+    decreaseEnery(int) {
+      if(this.energy>0){
+        this.energy--;
+      }
+    }
+  }
+  class Lamp{
+    constructor(status,battery) {
+      this.status=status;
+      this.battery=battery;
+    }
+  }
+
+
+</script>
+</html>
