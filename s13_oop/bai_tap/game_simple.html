@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="game"></div>
+</body>
+<script>
+ class Pikachu{
+     constructor(img,top,left,size) {
+         this.img=img;
+         this.top=top;
+         this.left=left;
+         this.size=size;
+     }
+     getLeft(){
+         return this.left;
+     }
+     getSize(){
+         return this.size;
+     }
+     getTop(){
+         return this.top;
+     }
+     display(){
+         return '<img width="'+ this.size + '"' +
+             ' height="'+ this.size + '"' +
+             ' src="' + this.img +'"' +
+             ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+     }
+     moveRight(){
+         this.left+=20;
+     }
+     moveLeft(){
+         this.left-=20;
+     }
+     moveDown(){
+         this.top+=20;
+     }
+     moveUp(){
+         this.top+=20;
+     }
+ }
+let imgPikachu=new Pikachu("pikachu.png",20,20,100);
+ function turnRiht(){
+     if((imgPikachu.getLeft()+imgPikachu.getSize())<window.innerWidth){
+         imgPikachu.moveRight();
+     }
+     document.getElementById('game').innerHTML=imgPikachu.display();
+     setTimeout(turnRiht, 500);
+ }
+ function turndown(){
+     if((imgPikachu.getTop()+imgPikachu.getSize())<window.innerHeight){
+         imgPikachu.moveDown();
+     }
+     document.getElementById('game').innerHTML=imgPikachu.display();
+     setTimeout(turndown, 500);
+ }
+  function turnLeft(){
+      if((imgPikachu.getLeft()+imgPikachu.getSize())>0){
+          imgPikachu.moveLeft();
+      }
+      document.getElementById('game').innerHTML=imgPikachu.display();
+      setTimeout(turnLeft, 500);
+  }
+ function turnUp(){
+     if((imgPikachu.getTop()+imgPikachu.getSize())<window.innerHeight){
+         imgPikachu.moveUp();
+     }
+     document.getElementById('game').innerHTML=imgPikachu.display();
+     setTimeout(turnUp, 500);
+ }
+ let a=[turnRiht(),turndown(),turnLeft(),turnUp()]
+start()
+</script>
+</html>

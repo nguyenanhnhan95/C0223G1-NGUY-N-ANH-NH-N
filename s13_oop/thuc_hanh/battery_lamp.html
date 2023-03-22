@@ -8,31 +8,57 @@
 
 </body>
 <script>
-  class Battery {
-    constructor(energy) {
-      this.energy = energy;
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        setEnery(int) {
+            this.energy = int;
+        }
+
+        getEnergy() {
+            return this.energy;
+        }
+
+        decreaseEnery(int) {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
     }
 
-    setEnery(int) {
-      this.energy = int;
+    class Lamp extends Battery {
+        constructor(battery, status) {
+            super(battery);
+            this.status = status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        statusLamp() {
+            if (this.status) {
+                alert("Lighting")
+            } else {
+                alert("Not lighting")
+            }
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+
+        turnOff() {
+            this.status = false;
+        }
     }
 
-    getEnergy() {
-      return this.energy;
-    }
-    decreaseEnery(int) {
-      if(this.energy>0){
-        this.energy--;
-      }
-    }
-  }
-  class Lamp{
-    constructor(status,battery) {
-      this.status=status;
-      this.battery=battery;
-    }
-  }
-
-
+    let battery = new Battery();
+    battery.setEnery(50);
+    let lightA = new Lamp();
+    lightA.setStatus(true);
+    lightA.statusLamp();
 </script>
 </html>
