@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrNumerators = [5, 2, 5];
+    let arrDenominators = [6, 3, 4];
+    let numberMax = 0;
+    let countN = 0;
+    for (let i = 0; i < arrDenominators.length; i++) {
+        if (numberMax < (arrNumerators[i] / arrDenominators[i])) {
+            numberMax = (arrNumerators[i] / arrDenominators[i]);
+            countN = i;
+        }
+    }
+    alert(countN);
+</script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><label for="nhan">Mã Học viên</label></td>
+        <td><input id="nhan" style="width: 150px"></td>
+        <td><label for="nhan1">Tên</label></td>
+        <td><input id="nhan1"></td>
+        <td><label for="nhan2">Lớp</label></td>
+        <td><input id="nhan2" style="width: 70px"></td>
+    </tr>
+    <tr>
+        <td><label for="nhan3">Email</label></td>
+        <td><input id="nhan3" style="width: 150px"></td>
+        <td><label for="nhan4">Birth</label></td>
+        <td><input type="date" id="nhan4"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button style="width: 100px;height:30px;text-align: center" onclick="addStudy()"><b>ADD</b></button>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<div id="vu"></div>
+</body>
+<script>
+    let arrayA = [];
+
+    class Study {
+        constructor(id, name, class1, email, birth) {
+            this.id = id;
+            this.name = name;
+            this.class1 = class1;
+            this.birth = birth;
+            this.email = email;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getClass() {
+            return this.class1;
+        }
+
+        getBirth() {
+            return this.birth;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setClass(class2) {
+            this.class1 = class2;
+        }
+
+        setBirth(birth) {
+            this.birth = birth;
+        }
+    }
+
+    let studentA = new Study(1, "Nguyễn Anh Nhàn", "G0223", "nguyenanhnhan95@gmail.com", "02/07/2019")
+    let studentN = new Study(1, "Nguyễn Anh Vũ", "G0223", "nguyenanhnhan95@gmail.com", "02/07/2019")
+    arrayA.push(studentA);
+    arrayA.push(studentN);
+    displayStudy(arrayA);
+
+    function addStudy() {
+        let numberID = document.getElementById("nhan").value;
+        let numberName = document.getElementById("nhan1").value;
+        let numberClass = document.getElementById("nhan2").value;
+        let numberEmail = document.getElementById("nhan3").value;
+        let numberBirth = document.getElementById("nhan4").value;
+        let newStudy = new Study(numberID, numberName, numberClass, numberEmail, numberBirth);
+        arrayA.push(newStudy)
+        displayStudy(arrayA)
+        document.getElementById("nhan").value = "";
+        document.getElementById("nhan1").value = "";
+        document.getElementById("nhan2").value = "";
+        document.getElementById("nhan3").value = "";
+        document.getElementById("nhan4").value = "";
+    }
+
+    function displayStudy() {
+        let listStudy = "";
+        listStudy += "<table border ='1' >\n" +
+            "    <tr>\n" +
+            "        <th style=>Mã học viên</th>\n" +
+            "        <th>Tên</th>\n" +
+            "        <th>Lớp</th>\n" +
+            "        <th>Email</th>\n" +
+            "        <th>Ngày sinh</th>" +
+            "        <th colspan='2'>Option</th>"
+        for (let i = 0; i < arrayA.length; i++) {
+            listStudy += "<tr>" +
+                "<td style='text-align: center'>" + arrayA[i].getId() + "</td>" +
+                "<td>" + arrayA[i].getName() + "</td>" +
+                "<td>" + arrayA[i].getClass() + "</td>" +
+                "<td>" + arrayA[i].getEmail() + "</td>" +
+                "<td>" + arrayA[i].getBirth() + "</td>" +
+                "<td><button onclick='editInfor()'>Edit</button></td>" +
+                "<td><button onclick='deleteInfor(" + i + ")'>Delete</button></td>"
+        }
+        listStudy += "</table>";
+        document.getElementById("vu").innerHTML = listStudy;
+    }
+
+    function deleteInfor(i) {
+        displayStudy(deleteElement(i, arrayA));
+    }
+
+    function deleteElement(number, arr) {
+
+        for (let i = 0; i < arr.length; i++) {
+            if (number == i) {
+                for (let j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                break;
+            }
+        }
+        arr.pop();
+        return arr;
+    }
+
+    function editInfor(i) {
+
+    }
+</script>
+</html>

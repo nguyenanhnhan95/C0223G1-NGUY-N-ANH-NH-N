@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrayA = [];
+    let countN = +prompt("Please enter number row");
+    let countM = +prompt("Please enter number column");
+    let sumPrime = "";
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = [];
+        for (let j = 0; j < countM; j++) {
+            do {
+                arrayA[i][j] = +prompt("Please enter A[" + i + "][" + j + "]");
+            }
+            while (arrayA[i][j] < 1);
+        }
+    }
+
+    function findPrime(arr) {
+        for (let i = 0; i < countN; i++) {
+            for (let j = 0; j < countM; j++) {
+                sumPrime += numberPrime(arrayA[i][j]);
+            }
+        }
+        return sumPrime.split("");
+    }
+
+    function numberPrime(numberA) {
+        flag = true;
+        for (let i = 2; i < numberA; i++) {
+            if (numberA % i == 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            return numberA;
+        }
+        return "";
+    }
+
+    function deleteElement(arr, index) {
+        for (let i = 0; i < arr.length; i++) {
+            if (i == index) {
+                for (let j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                arr.pop();
+                break;
+            }
+        }
+        return arr;
+    }
+
+    function differentSymbols(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    deleteElement(arr, j);
+                }
+            }
+        }
+        return arr;
+    }
+
+    arrayA = differentSymbols(findPrime(arrayA));
+    alert("number prime in arr =" + arrayA + "number of prime =" + arrayA.length);
+</script>
+</html>

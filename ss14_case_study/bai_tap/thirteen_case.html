@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrayA = [];
+    let countN = +prompt("Please enter number row");
+    let countM = +prompt("Please enter number column");
+    let numberMax = 0;
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = [];
+        for (let j = 0; j < countM; j++) {
+            arrayA[i][j] = +prompt("Please enter A[" + i + "][" + j + "]");
+        }
+    }
+
+    function findMinMax(arr) {
+        let numberMin = arr[0][0];
+        let numberMax = 0;
+        let arrayB = [];
+        for (let i = 0; i < countN; i++) {
+            for (let j = 0; j < countM; j++) {
+                if (numberMin > arr[i][j]) {
+                    numberMin = arr[i][j];
+                }
+                if (numberMax < arr[i][j]) {
+                    numberMax = arr[i][j];
+                }
+            }
+        }
+        arrayB.push(numberMin, numberMax);
+        return arrayB;
+    }
+
+    arrayA = findMinMax(arrayA);
+    alert("Min=" + arrayA[0] + "Max=" + arrayA[1]);
+</script>
+</html>

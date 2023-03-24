@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayA = [];
+    let arrayB = [];
+    let countN = +prompt("Please enter number of the elements in array A=");
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = +prompt("Please enter A[" + i + "]=");
+    }
+    arrayB[0] = arrayA[0];
+    for (let i = 0; i < countN; i++) {
+        let numberC = 0;
+        for (let j = 0; j <= i; j++) {
+            numberC += arrayA[j];
+        }
+        arrayB[i] = numberC;
+    }
+    alert(arrayB);
+</script>
+</html>

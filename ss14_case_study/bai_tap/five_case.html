@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrayA = [7, 2, 5, 3, 5, 3];
+    let arrayB = [7, 2, 5, 4, 6, 3, 5, 3, 9, 20];
+
+    function findSame(arrayA, arrayB) {
+        let arrayC = [];
+        for (let i = 0; i < arrayB.length; i++) {
+            let flag = true;
+            for (let j = 0; j < arrayA.length; j++) {
+                if (arrayB[i] == arrayA[j]) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                arrayC.push(arrayB[i]);
+                arrayA.push(arrayB[i]);
+            }
+
+        }
+        return arrayC;
+    }
+
+    function sortArray(array) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = i; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    let tem = array[i];
+                    array[i] = array[j];
+                    array[j] = tem;
+
+                }
+            }
+        }
+        return array;
+    }
+
+    alert(sortArray(findSame(arrayA, arrayB)));
+</script>
+</html>

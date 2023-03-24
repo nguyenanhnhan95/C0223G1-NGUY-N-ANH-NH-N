@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrayA = [];
+    let countN = +prompt("Please enter number n");
+    let countM = +prompt("Please enter number M");
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = [];
+        for (let j = 0; j < countM; j++) {
+            arrayA[i][j] = +prompt("Please enter A[" + i + "][" + j + "]=");
+        }
+    }
+
+    function evenArr(arr) {
+        let numberSum = 0
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i][j] % 2 == 0) {
+                    numberSum += arr[i][j];
+                }
+            }
+        }
+        return numberSum;
+    }
+
+    alert(evenArr(arrayA));
+</script>
+</html>

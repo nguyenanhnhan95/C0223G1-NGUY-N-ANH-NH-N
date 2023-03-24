@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let listA = prompt("Please enter your name");
+    let upWord = "ZXCVBNMASDFGHJKLQWERTYUIOP";
+    let lowWord = "zxcvbnmasdfghjklqwertyuiop";
+    let arrayA = listA.trim().split("");
+
+    function deleteElement(arr, index) {
+        for (let i = 0; i < arr.length; i++) {
+            if (i == index) {
+                for (let j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                arr.pop();
+                break;
+            }
+        }
+        return arr;
+    }
+
+    function transferUp(word) {
+        for (let i = 0; i < upWord.length; i++) {
+            if (lowWord[i] == word) {
+                word = upWord[i];
+                break;
+            }
+        }
+        return word;
+    }
+
+    function transferDown(word) {
+        for (let i = 0; i < upWord.length; i++) {
+            if (upWord[i] == word) {
+                word = lowWord[i];
+                break;
+            }
+        }
+        return word;
+    }
+
+    function transferWord(arr) {
+        let listResult = "";
+        arr[0] = transferUp(arr[0])
+        for (let i = 1; i < arr.length; i++) {
+            arr[i] = transferDown(arr[i]);
+            if (arr[i] == arr[i + 1]) {
+                deleteElement(arr, i);
+                arr[i + 1] = transferUp(arr[i + 1]);
+                i--;
+            } else if (arr[i] == " ") {
+                arr[i + 1] = transferUp(arr[i + 1]);
+                i++;
+            }
+        }
+        listResult = arr.join("");
+        return listResult;
+    }
+
+    alert(transferWord(arrayA));
+</script>
+</html>

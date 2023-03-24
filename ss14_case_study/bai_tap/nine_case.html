@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inputList = prompt("Please enter one list");
+    let arrayA = [];
+    arrayA = inputList.split("");
+
+    function deleteElement(arr, index) {
+        for (let i = 0; i < arr.length; i++) {
+            if (i == index) {
+                for (let j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                arr.pop();
+                break;
+            }
+        }
+        return arr;
+    }
+
+    function differentSymbols(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    deleteElement(arr, j);
+                }
+            }
+        }
+        let listresult = arr.join("")
+        return listresult;
+    }
+
+    alert(differentSymbols(arrayA));
+</script>
+</html>
