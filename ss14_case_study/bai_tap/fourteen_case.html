@@ -80,13 +80,25 @@
         }
     }
 
-    let studentA = new Study(1, "Nguyễn Anh Nhàn", "G0223", "nguyenanhnhan95@gmail.com", "02/07/2019")
-    let studentN = new Study(1, "Nguyễn Anh Vũ", "G0223", "nguyenanhnhan95@gmail.com", "02/07/2019")
+    let studentA = new Study("HV-0001", "Nguyễn Văn A", "G0223", "nguyenanhnhan95@gmail.com", "02/07/2019");
+    let studentN = new Study("HV-0003", "Nguyễn Văn B", "G0223", "nguyenanhnhan95@gmail.com", "02/07/2019");
     arrayA.push(studentA);
     arrayA.push(studentN);
     displayStudy(arrayA);
 
     function addStudy() {
+        do {
+            let flag = true;
+            for (let i = 0; i < arrayA.length; i++) {
+                if (document.getElementById("nhan").value != arrayA[i].getId()) {
+                    flag = false;
+                } else {
+                    alert("Id already exists");
+                    numberID = document.getElementById("nhan").value = "";
+                    return 0;
+                }
+            }
+        } while (flag);
         let numberID = document.getElementById("nhan").value;
         let numberName = document.getElementById("nhan1").value;
         let numberClass = document.getElementById("nhan2").value;
@@ -104,7 +116,7 @@
 
     function displayStudy() {
         let listStudy = "";
-        listStudy += "<table border ='1' >\n" +
+        listStudy += "<table border ='1' style='border-collapse: collapse' >\n" +
             "    <tr>\n" +
             "        <th style=>Mã học viên</th>\n" +
             "        <th>Tên</th>\n" +
@@ -119,7 +131,7 @@
                 "<td>" + arrayA[i].getClass() + "</td>" +
                 "<td>" + arrayA[i].getEmail() + "</td>" +
                 "<td>" + arrayA[i].getBirth() + "</td>" +
-                "<td><button onclick='editInfor()'>Edit</button></td>" +
+                "<td><button onclick='editInfor(" + i + ")'>Edit</button></td>" +
                 "<td><button onclick='deleteInfor(" + i + ")'>Delete</button></td>"
         }
         listStudy += "</table>";
@@ -145,7 +157,17 @@
     }
 
     function editInfor(i) {
-
+        let flag = confirm("Do you want edit ?")
+        if (flag == false) {
+            return 0;
+        }
+        for (let j = 0; j < arrayA.length; j++) {
+            if (j == i) {
+                let nameNew = prompt("Please enter name new");
+                arrayA[j].setName(nameNew);
+            }
+        }
+        displayStudy(arrayA);
     }
 </script>
 </html>
