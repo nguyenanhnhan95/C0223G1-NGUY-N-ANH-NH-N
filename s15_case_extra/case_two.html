@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    inputMonth = +prompt("Please enter month=");
+    inputYear = +prompt("Please enter year =");
+
+    function leepYear(year) {
+        if (year % 4 == 0) {
+            if (year % 100 != 0) {
+                return true;
+            } else if (year % 400 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    function resultTwo(month, year) {
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 31;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 30;
+            default:
+                if (leepYear(year)) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+        }
+    }
+
+    alert(resultTwo(inputMonth, inputYear));
+</script>
+</html>

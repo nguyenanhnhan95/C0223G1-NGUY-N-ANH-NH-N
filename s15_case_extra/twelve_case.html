@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrayA = [];
+    let countM = +prompt("Please enter number row=");
+    let countN = +prompt("Please enter number col=");
+    for (let i = 0; i < countM; i++) {
+        arrayA[i] = [];
+        for (let j = 0; j < countM; j++) {
+            arrayA[i][j] = +prompt("Please enter A[" + i + "][" + j + "]=");
+        }
+    }
+
+    function sentenceA(arr) {
+        let multipRow = 1;
+        for (let i = 0; i < countM; i++) {
+            multipRow *= arr[0][i];
+        }
+        return multipRow;
+    }
+
+    function maxRowI(arr) {
+        let arrC = [];
+        for (let i = 0; i < countM; i++) {
+            let numberMax = 0
+            for (let j = 0; j < countN; j++) {
+                if (numberMax < arr[i][j]) {
+                    numberMax = arr[i][j];
+                }
+            }
+            arrC.push(numberMax);
+        }
+        return arrC;
+    }
+
+    function deleteFirst(arr) {
+        let arrD = [];
+        for (let i = 1; i < arr.length; i++) {
+            arrD.push(arr[i]);
+        }
+        return arrD;
+    }
+
+    alert("SentenceB=" + sentenceA(arrayA) + "SentenceC=" + maxRowI(arrayA) + "SentenceD=" + deleteFirst(maxRowI(arrayA)));
+</script>
+</html>

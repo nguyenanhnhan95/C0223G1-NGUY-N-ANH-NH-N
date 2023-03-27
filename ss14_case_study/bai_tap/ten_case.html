@@ -18,6 +18,7 @@
             if (i == index) {
                 for (let j = i; j < arr.length - 1; j++) {
                     arr[j] = arr[j + 1];
+                    j--;
                 }
                 arr.pop();
                 break;
@@ -38,14 +39,12 @@
     }
 
     function commonCharacterCount(arrayA, arrayB) {
-        let listC = "";
+        let listC = [];
         let countN = 0;
-        let arrayC = differentSymbols(arrayA);
-        let arrayD = differentSymbols(arrayB);
-        for (let i = 0; i < arrayC.length; i++) {
-            for (let j = 0; j < arrayD.length; j++) {
-                if (arrayD[j] == arrayC[i]) {
-                    listC += arrayD[j];
+        for (let i = 0; i < arrayA.length; i++) {
+            for (let j = 0; j < arrayB.length; j++) {
+                if (arrayA[i] == arrayB[j]) {
+                    listC.push(arrayA[i])
                     countN += 1;
                     break;
                 }
@@ -53,6 +52,7 @@
         }
         return listC;
     }
+
 
     alert(commonCharacterCount(arrayA, arrayB));
 </script>

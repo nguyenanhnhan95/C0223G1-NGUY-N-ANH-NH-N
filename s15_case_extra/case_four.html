@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let countN = +prompt("Please enter N");
+
+    function primeN(n) {
+        if (n <= 1) {
+            return 1;
+        } else {
+            return primeN(n - 1) * n;
+        }
+    }
+
+    function resultS(n) {
+        if (n == 0) {
+            return 15;
+        } else {
+            return resultS(n - 1) + Math.pow(-1, n) * (1 / primeN(n));
+        }
+    }
+
+    alert("result =" + resultS(countN));
+</script>
+</html>

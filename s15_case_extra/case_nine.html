@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let wordCapitalize = "ASDFGHJKLZXCVBNMQWERTYUIOP";
+    let wordNormal = "asdfghjklzxcvbnmqwertyuiop"
+    let inputstr = prompt("Please enter str=");
+    let arrayA = inputstr.split("");
+
+    function reverse(arr) {
+        for (let i = 0; i < (arr.length) / 2; i++) {
+            let numberA = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = numberA;
+        }
+        return arr;
+    }
+
+    function transferCapitalize(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < wordNormal.length; j++) {
+                if (arr[i] == wordNormal[j]) {
+                    arr[i] = wordCapitalize[j];
+                    break;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function transferNormal(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < wordCapitalize.length; j++) {
+                if (arr[i] == wordCapitalize[j]) {
+                    arr[i] = wordNormal[j];
+                    break;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function reverseWord(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < wordCapitalize.length; j++) {
+                if (arr[i] == wordCapitalize[j]) {
+                    arr[i] = wordNormal[j];
+                    break;
+                }
+                if (arr[i] == wordNormal[j]) {
+                    arr[i] = wordCapitalize[j];
+                    break;
+                }
+            }
+        }
+        return arr;
+    }
+
+    document.write("Str reverse =" + (reverse(arrayA)).join("") + "<br> Transfer word to capital=" +
+        transferCapitalize(arrayA).join("") + "Transfer word normal=" + transferNormal(arrayA).join("") +
+        "Reverser word =" + reverseWord(arrayA).join(""));
+</script>
+</html>

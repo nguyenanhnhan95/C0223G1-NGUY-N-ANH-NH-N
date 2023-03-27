@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputStr = prompt("Please enter list=");
+    let arrayA = inputStr.split("");
+
+    function deleteIndex(index, arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (i == index) {
+                for (let j = i; j < arr.length; j++) {
+                    arr[j] = arr[j + 1];
+                }
+            }
+        }
+        arr.pop();
+        return arr;
+    }
+
+    function differentElement(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    deleteIndex(j, arr);
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function resultTen(arr) {
+        let arrC = [];
+        let countWord = 0;
+        for (let i = 0; i < arr.length; i++) {
+            arrC[i] = arr[i];
+        }
+        let arrB = differentElement(arr);
+        for (let i = 0; i < arrB.length; i++) {
+            let countN = 0;
+            for (let j = 0; j < arrC.length; j++) {
+                if (arrB[i] == arrC[j]) {
+                    countN += 1;
+                }
+            }
+            countWord += countN;
+            document.write(arrB[i] + "Frequently=" + countN + "<br>");
+        }
+        document.write("Sum word=" + countWord);
+    }
+
+    resultTen(arrayA);
+</script>
+</html>

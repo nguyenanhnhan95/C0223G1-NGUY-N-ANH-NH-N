@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let countN = +prompt("Please enter number N=");
+
+    function primeN(n) {
+        if (n <= 1) {
+            return 1;
+        } else {
+            return primeN(n - 1) * n;
+        }
+    }
+
+    function resultFive(n) {
+        if (n < 1) {
+            return 0;
+        } else {
+            return resultFive(n - 1) + 1 / primeN(2 * n - 1);
+        }
+    }
+
+    alert(resultFive(countN));
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let sumOdd = 0;
+    let sumIndexEven = 0;
+    let arrayA = [];
+    let countN = +prompt("Please enter number N=");
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = +prompt("Please enter A[" + i + "]=");
+    }
+
+    function sentenceBC(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                sumOdd += arr[i];
+            }
+            if (i % 2 == 0) {
+                sumIndexEven += arr[i];
+            }
+        }
+        alert("odd totals =" + sumOdd + "index even totals =" + sumIndexEven);
+    }
+
+    function findFirst(arr) {
+        let numberK = +prompt("Please enter number K");
+        for (let i = 0; i < arr.length; i++) {
+            if (numberK == arr[i]) {
+                return i;
+            }
+        }
+    }
+
+    function sortDecrease(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    let swapNumber = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = swapNumber;
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function insertNumber(index, arr) {
+        arr.push(index);
+        arr = sortDecrease(arr);
+        return arr;
+    }
+
+    alert(insertNumber(5, arrayA));
+</script>
+</html>

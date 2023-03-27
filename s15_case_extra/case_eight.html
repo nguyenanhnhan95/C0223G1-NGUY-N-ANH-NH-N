@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputA = +prompt("Please enter number A");
+    let inputB = +prompt("Please enter number B");
+    let maxUc = 0;
+    let minBc = 0;
+    if (inputA > inputB) {
+        for (let i = inputB; i > 0; i--) {
+            if (inputA % i == 0 && inputB % i == 0) {
+                maxUc = i;
+                break;
+            }
+        }
+        for (let i = inputA + 1; ; i++) {
+            if (i % inputA == 0 && i % inputB == 0) {
+                minBc = i;
+                break;
+            }
+        }
+    } else {
+        for (let i = inputA; i > 0; i--) {
+            if (inputA % i == 0 && inputB % i == 0) {
+                maxUc = i;
+                break;
+            }
+        }
+        for (let i = inputB + 1; ; i++) {
+            if (i % inputA == 0 && i % inputB == 0) {
+                minBc = i;
+                break;
+            }
+        }
+    }
+    alert("UCLN=" + maxUc + " " + "BCLN=" + minBc);
+</script>
+</html>
