@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhan1">
+<p>Mã máy</p>
+<input type="text" id="nhan2">
+<p>Tên Máy</p>
+<input type="text" id="nhan3">
+<p> Hang sản xuất</p>
+<input type="text" id="nhan4">
+<p>gia Ban</p>
+<button onclick="themSanPham()">ADD</button>
+<div id="vu"></div>
+</body>
+<script>
+    class Maytinh {
+        constructor(maMay, tenMay, hangSx, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.hangSx = hangSx;
+            this.giaBan = giaBan;
+        }
+
+        getMaMay() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getHangSX() {
+            return this.hangSx;
+        }
+
+        getGiaBan(giaBan) {
+            return this.giaBan;
+        }
+
+        setMaMay(maMay) {
+            this.maMay = maMay;
+        }
+
+        setTenMay(tenMay) {
+            this.tenMay = tenMay;
+        }
+
+        setHangSX(hangSx) {
+            this.hangSx = hangSx;
+        }
+
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+    }
+
+    let maytinhMot = new Maytinh("0X1", "Lumnia", "Nokia", 15)
+    let maytinhHai = new Maytinh("0PX1", "Iphone", "Apple", 15)
+    let arrayA = [];
+    arrayA.push(maytinhMot, maytinhHai);
+    hienSanpham();
+
+    function hienSanpham() {
+        let listStr = "";
+        arrayA = sapXep(arrayA);
+        listStr += "<table border='1'>\n" +
+            "  <tr>\n" +
+            "    <th>ID</th>\n" +
+            "    <th>Mã máy</th>\n" +
+            "    <th>Tên máy</th>\n" +
+            "    <th>Hảng sản xuất</th>\n" +
+            "    <th>Gía ban</th>\n" +
+            "  </tr>\n"
+        for (let i = 0; i < arrayA.length; i++) {
+            listStr += "  <tr>\n" +
+                "    <td>" + (i + 1) + "</td>\n" +
+                "    <td>" + arrayA[i].getMaMay() + "</td>\n" +
+                "    <td>" + arrayA[i].getTenMay() + "</td>\n" +
+                "    <td>" + arrayA[i].getHangSX() + "</td>\n" +
+                "    <td>" + arrayA[i].getGiaBan() + "</td>\n" +
+                "  </tr>\n"
+        }
+        listStr += "</table>"
+        document.getElementById("vu").innerHTML = listStr;
+    }
+
+    function sapXep(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i].getGiaBan() > arr[j].getGiaBan()) {
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function themSanPham() {
+        let sanPhamMoi = new Maytinh(
+            document.getElementById('nhan1').value,
+            document.getElementById('nhan2').value,
+            document.getElementById('nhan3').value,
+            document.getElementById('nhan4').value * 1,
+        );
+        arrayA.push(sanPhamMoi);
+        document.getElementById('nhan1').value = "";
+        document.getElementById('nhan2').value = "";
+        document.getElementById('nhan3').value = "";
+        document.getElementById('nhan4').value = "";
+        hienSanpham();
+    }
+</script>
+</html>
