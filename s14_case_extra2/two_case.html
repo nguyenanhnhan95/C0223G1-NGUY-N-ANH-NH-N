@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let countN = +prompt("Please enter length arr=");
+    let arrayA = [];
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = +prompt("Please enter A[" + i + "]=");
+    }
+
+    function checkArray(arr) {
+        let flag = true;
+        for (let i = 0; i < Math.floor(arr.length / 2)-1; i++) {
+            if (arr[Math.floor(arr.length / 2) + i] != (arr[i] * arr[i])) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            return "True";
+        } else {
+            return "False";
+        }
+    }
+
+    alert(checkArray(arrayA));
+</script>
+</html>

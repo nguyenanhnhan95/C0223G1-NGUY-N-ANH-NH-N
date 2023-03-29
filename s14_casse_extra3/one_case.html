@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrayA = [];
+    let countAr = +prompt("Please number element");
+    for (let i = 0; i < countAr; i++) {
+        arrayA[i] = prompt("Please enter A[" + i + "]=");
+    }
+    let arrayN = [];
+    for (let i = 0; i < countAr; i++) {
+        arrayN[i] = arrayA[i];
+    }
+
+    function deleteElement(index, arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (index == i) {
+                for (let j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                break;
+            }
+        }
+        arr.pop()
+        return arr;
+    }
+
+    function differentElement(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    deleteElement(i, arr);
+                    i--;
+                }
+            }
+        }
+        return arr;
+    }
+
+    function resultOne(arr, arrD) {
+        let flag = true;
+        let arrC = [];
+        let arrayB = differentElement(arr);
+        for (let i = 0; i < arrayB.length; i++) {
+            let countN = 0;
+            for (let j = 0; j < arrD.length; j++) {
+                if (arrayB[i] == arrD[j]) {
+                    countN++;
+                }
+            }
+            arrC.push(countN);
+        }
+        for (let i = 0; i < arrC.length; i++) {
+            if (arrC[0] != arrC[i]) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    alert(resultOne(arrayA, arrayN));
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inputStr=prompt("Please enter str");
+    let inputStrB=prompt("Please enter str");
+    let arrayA=inputStr.split("");
+    let arrayB=inputStrB.split("");
+  function differentElement(arr){
+      for (let i = 0; i <arr.length ; i++) {
+          for (let j = i+1; j <arr.length; j++) {
+              if(arr[i]==arr[j]){
+                  deleteElement(i,arr)
+                  i--;
+              }
+          }
+      }
+      return arr;
+  }
+  function deleteElement(index, arr) {
+      for (let i = 0; i < arr.length; i++) {
+          if (index == i) {
+              for (let j = i; j < arr.length - 1; j++) {
+                  arr[j] = arr[j + 1];
+              }
+              break;
+          }
+      }
+      arr.pop()
+      return arr;
+  }
+  function resultTwo(arr,arrB){
+      let countN=0;
+      let arrayC=differentElement(arr);
+      let arrayD=differentElement(arrB);
+      for (let i = 0; i < arrayC.length; i++) {
+          for (let j = 0; j < arrayD.length; j++) {
+              if(arrayC[i]==arrayD[j]){
+                  countN++;
+              }
+          }
+      }
+      return countN;
+  }
+alert(resultTwo(arrayA,arrayB))
+</script>
+</html>

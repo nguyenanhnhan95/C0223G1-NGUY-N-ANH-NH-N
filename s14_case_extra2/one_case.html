@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let countN = +prompt("Please enter length arr=");
+    let arrayA = [];
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = +prompt("Please enter A[" + i + "]=");
+    }
+    alert(arrayA);
+    function examArr(arr) {
+        let countOdd = 0;
+        let countEven = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                countEven++;
+            } else {
+                countOdd++;
+            }
+        }
+        if (countEven == countOdd) {
+            return "OK";
+        } else {
+            return "NO";
+        }
+    }
+
+    alert(examArr(arrayA));
+</script>
+</html>

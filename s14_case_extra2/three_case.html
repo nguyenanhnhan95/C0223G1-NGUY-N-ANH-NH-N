@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let countN = +prompt("Please enter length arr=");
+    let arrayA = [];
+    for (let i = 0; i < countN; i++) {
+        arrayA[i] = +prompt("Please enter A[" + i + "]=");
+    }
+    alert(arrayA);
+
+    function checkIncrease(arr) {
+        let flag = true;
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    function checkDecrease(arr) {
+        let flag = true;
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] >= arr[i + 1]) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    function checkArr(arr) {
+        if (checkIncrease(arr) || checkDecrease(arr)) {
+            return "OK";
+        } else {
+            return "NO";
+        }
+    }
+
+    alert(checkArr(arrayA));
+</script>
+</html>

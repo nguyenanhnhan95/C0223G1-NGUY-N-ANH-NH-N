@@ -7,17 +7,19 @@
 <body>
 </body>
 <script>
-  let inputSalar=+prompt("Please enter your income");
-  switch (true){
-    case inputSalar==15:
-      alert(inputSalar-inputSalar*0.2);
-      break;
-    case inputSalar>7:
-      alert(+(inputSalar-inputSalar*0.1));
-      break;
-    case inputSalar>7:
-      alert(+(inputSalar-inputSalar*0.05));
-      break;
-  }
+    let inputSalar = +prompt("Please enter your income");
+    switch (true) {
+        case inputSalar >= 15:
+            alert("the salar tax=" + 0.2 * inputSalar + "income=" + inputSalar * 0.8);
+            break;
+        case inputSalar > 7:
+            alert("the salar tax=" + inputSalar * 0.1 + "income=" + (inputSalar - inputSalar * 0.1));
+            break;
+        case inputSalar > 0:
+            alert("the salar tax=" + inputSalar * 0.05 + "income=" + (inputSalar - inputSalar * 0.05));
+            break;
+        default:
+            alert("input is underfind")
+    }
 </script>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let wordCaptical = "ASDFGHJKLZXCVBNMQWERTYUIOP";
+    let wordNormal = "asdfghjklzxcvbnmqwertyuiop"
+    let inputStr = prompt("Please enter str");
+    let arrayA = inputStr.trim().split("");
+
+    function checkStr(arr) {
+        let arrC = [];
+        let countSpace = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == " ") {
+                countSpace++;
+            }
+        }
+        arrC.push(arr[0].toUpperCase());
+        if (countSpace >= 1) {
+            for (let i = 1; i < arr.length - 1; i++) {
+                if (arr[i] == " ") {
+                    arrC.push(arr[i + 1].toUpperCase());
+                }
+            }
+        }
+        return arrC;
+    }
+
+    alert(checkStr(arrayA));
+</script>
+</html>

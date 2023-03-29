@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let wordCaptical = "ASDFGHJKLZXCVBNMQWERTYUIOP";
+    let wordNormal = "asdfghjklzxcvbnmqwertyuiop";
+    let inputStr = prompt("Please enter a str to check ");
+
+    function checkString(str) {
+        let countCap = 0;
+        let countNor = 0;
+        for (let i = 0; i < str.length; i++) {
+            for (let j = 0; j < wordCaptical.length; j++) {
+                if (str[i] == wordCaptical[j]) {
+                    countCap++;
+                    break;
+                } else if (str[i] == wordNormal[j]) {
+                    countNor++;
+                    break;
+                }
+            }
+        }
+        if (countCap == countNor) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    alert(checkString(inputStr));
+</script>
+</html>
